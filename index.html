@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>7 Star Clean Service — 웹사이트 디자인 북 / Website Design Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+:root{--ink:#141C3D;--text:#3F4866;--muted:#6A7091;--line:#E1E6F3;--blue:#4A63E7;--navy:#16255F;--yellow:#F6C21C;--tint:#F3F5FB}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Pretendard,Inter,system-ui,sans-serif;color:var(--text);background:#E9ECF5;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:297mm;min-height:210mm;margin:10mm auto;background:#fff;padding:12mm 15mm;position:relative;box-shadow:0 10px 40px rgba(20,28,61,.12);display:flex;flex-direction:column}
+h1,h2,h3{color:var(--ink);line-height:1.25}
+.en{color:var(--muted);font-family:Inter,system-ui,sans-serif}
+.tag{display:inline-block;font:700 10pt Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+a{color:var(--blue)}
+
+/* cover */
+.cover{padding:0}
+.cover-head{background:var(--navy);color:#fff;padding:16mm 20mm 13mm}
+.cover-head .tag{color:var(--yellow)}
+.cover-head h1{color:#fff;font-size:34pt;font-weight:800;margin-top:6mm}
+.cover-head p{font-size:15pt;color:#C9D1F5;margin-top:2mm}
+.cover-body{padding:10mm 20mm 8mm;display:grid;grid-template-columns:1fr 1fr;gap:14mm;flex:1}
+.cover-body img{width:60mm;display:block;margin-bottom:5mm}
+.meta{font-size:10.5pt}
+.meta dt{font-weight:700;color:var(--ink);margin-top:3mm}
+.cover-body h2{font-size:13pt;margin-bottom:3mm}
+.cover-body ol{padding-left:5mm;font-size:11pt}
+.cover-body li{margin-bottom:2.5mm}
+.cover-body li .en{display:block;font-size:9.5pt}
+
+/* shared-basics page */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:6mm}
+.box{background:var(--tint);border-radius:4mm;padding:5mm 6mm}
+.box h3{font-size:12.5pt;margin-bottom:3mm}
+.box ul{padding-left:5mm;font-size:10.5pt}
+.box li{margin-bottom:2mm}
+.box li .en{display:block;font-size:9pt}
+.pagehead h2{font-size:22pt;font-weight:800;margin-top:2mm}
+.pagehead p{font-size:11pt;margin-top:1.5mm}
+
+/* option pages */
+.opt-grid{display:grid;grid-template-columns:178mm 51.4mm;gap:8mm;margin-top:5mm;align-items:start;justify-content:center}
+.shot{border:1px solid var(--line);border-radius:3mm;overflow:hidden;box-shadow:0 6px 18px rgba(20,28,61,.10)}
+.shot img{display:block;width:100%}
+.cap{font:600 8.5pt Inter,sans-serif;color:var(--muted);margin-top:2mm;text-align:center}
+.notes{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8mm;margin-top:4mm;font-size:9.5pt;line-height:1.5}
+.notes h3{font-size:10.5pt;margin-bottom:1.5mm;color:var(--blue)}
+.notes .en{display:block;font-size:8.8pt;margin-top:1mm}
+.sw{display:flex;gap:2mm;margin-top:2mm}
+.sw span{width:9mm;height:9mm;border-radius:2mm;border:1px solid var(--line)}
+.open{display:inline-block;margin-top:3mm;font:700 9.5pt Inter,sans-serif;text-decoration:none;background:var(--blue);color:#fff;padding:2mm 4.5mm;border-radius:99px}
+
+/* compare */
+table{width:100%;border-collapse:collapse;margin-top:5mm;font-size:10pt}
+th,td{text-align:left;padding:2mm 4mm;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 9pt Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-weight:700;color:var(--ink);width:17%}
+td .en{display:block;font-size:9pt}
+.foot{margin-top:auto;padding-top:4mm;font:500 8.5pt Inter,sans-serif;color:var(--muted);display:flex;justify-content:space-between}
+.cover .foot{padding:0 20mm 9mm}
+
+@page{size:A4 landscape;margin:0}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none;page-break-after:always;height:210mm;min-height:0;overflow:hidden}.open{display:none}}
+@media screen and (max-width:1180px){.page{width:auto;min-height:0;margin:12px;padding:20px}.cover-head,.cover-body{padding:24px}.cover .foot{padding:0 24px 20px}.cover-body,.cols,.notes{grid-template-columns:1fr}.opt-grid{grid-template-columns:1fr}.opt-grid>div:last-child{max-width:240px}.cover-head h1{font-size:26pt}table{font-size:9.5pt}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <div class="cover-head">
+    <span class="tag">Website Design Book · 17 Nov 2026</span>
+    <h1>웹사이트 디자인 북</h1>
+    <p>7 Star Clean Service 새 웹사이트 — 세 가지 디자인 방향 · Three design directions for the new website</p>
+  </div>
+  <div class="cover-body">
+    <div>
+      <img src="assets/logo.png" alt="7 Star Clean logo">
+      <dl class="meta">
+        <dt>고객 · Client</dt><dd>7 Star Clean Service — 박근태 사장님 · Mr Geun-tae Park</dd>
+        <dt>작성 · Prepared by</dt><dd>Connect Your Way — Sean Yongwoo Cho, Founder</dd>
+        <dt>관련 계약 · Agreement</dt><dd>CYW-C-7EA-0007-WEB-001</dd>
+      </dl>
+    </div>
+    <div>
+      <h2>이 문서를 보는 방법 <span class="en">· How to use this book</span></h2>
+      <ol>
+        <li>세 가지 디자인은 내용과 구성이 같고, 분위기(색·글꼴·형태)만 다릅니다.
+          <span class="en">The three designs share the same content and structure; only the look (colour, type, shapes) differs.</span></li>
+        <li>각 디자인의 컴퓨터 화면과 휴대폰 화면을 보시고 마음에 드는 하나를 골라 주세요.
+          <span class="en">Look at the desktop and phone view of each and choose the one you prefer.</span></li>
+        <li>"1번의 색에 3번의 글꼴"처럼 섞어서 말씀해 주셔도 됩니다.
+          <span class="en">Mixing is fine, for example "the colours of option 1 with the type of option 3".</span></li>
+        <li>가격·사진·리뷰는 아직 자리 표시(<b>$XX</b>, "Photo")입니다. 마지막 장의 자료를 주시면 채워 넣습니다.
+          <span class="en">Prices, photos and reviews are placeholders for now; the last page lists what we need from you.</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><span>Connect Your Way · connectyourway.au</span><span>1 / 6</span></div>
+</section>
+
+<!-- SHARED BASICS -->
+<section class="page">
+  <div class="pagehead">
+    <span class="tag">세 디자인 공통 · Common to all three</span>
+    <h2>어떤 디자인을 골라도 같은 것</h2>
+    <p class="en">What stays the same whichever design you choose</p>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <h3>첫 화면에 견적 문의 양식 <span class="en">· Quote form on the first screen</span></h3>
+      <ul>
+        <li>손님이 스크롤 없이 바로 문의를 남길 수 있습니다. 문의는 info@7starclean.com.au 로 전달됩니다.
+          <span class="en">A visitor can enquire without scrolling. Enquiries are delivered to info@7starclean.com.au.</span></li>
+        <li>필수 항목은 이름·전화·서비스·지역 네 가지뿐입니다.
+          <span class="en">Only four required fields: name, phone, service, suburb.</span></li>
+        <li>휴대폰에서는 화면 아래에 "전화 / 무료 견적" 버튼이 항상 떠 있습니다.
+          <span class="en">On phones, "Call / Free quote" buttons stay fixed at the bottom of the screen.</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>페이지 구성 <span class="en">· Page structure</span></h3>
+      <ul>
+        <li>서비스 6종 → 7 Star를 고르는 이유 → 이용 방법 → 대략적인 가격 → 서비스 지역 → 구글 리뷰 → 질문과 답변
+          <span class="en">Six services → why 7 Star → how it works → rough prices → areas → Google reviews → questions and answers.</span></li>
+        <li>작업 종류별 대략적인 가격대를 가격표와 질문·답변에 공개합니다.
+          <span class="en">A rough price range per job type appears in the price table and in the Q&amp;A.</span></li>
+        <li>상호·주소·전화번호·영업시간은 구글 프로필과 똑같이 모든 페이지에 들어갑니다.
+          <span class="en">Name, address, phone and hours match the Google profile on every page.</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>색상 <span class="en">· Colour</span></h3>
+      <ul>
+        <li>세 디자인 모두 로고의 파랑과 별 노랑을 사용합니다. 참고 사이트의 색(초록 등)은 쓰지 않았습니다.
+          <span class="en">All three use the logo's blue and star yellow, not the reference sites' own colours.</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>참고한 사이트 <span class="en">· Reference sites</span></h3>
+      <ul>
+        <li>1번 — callthecleaners.com.au · 2번 — cleanrific.com.au · 3번 — miraclemaid.com.au
+          <span class="en">Each option takes the visual feel of one reference; text, images and layout are our own.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>7 Star Clean Service — Website Design Book</span><span>2 / 6</span></div>
+</section>
+
+<!-- OPTION 1 -->
+<section class="page">
+  <div class="pagehead">
+    <span class="tag">Option 1</span>
+    <h2>1번 — 선명하고 힘 있는 디자인 <span class="en" style="font-weight:600;font-size:15pt">· Bold &amp; direct</span></h2>
+  </div>
+  <div class="opt-grid">
+    <div><div class="shot"><img src="shots/option-1-desktop-hero.png" alt="Option 1 desktop first screen"></div><div class="cap">컴퓨터 첫 화면 · Desktop, first screen</div></div>
+    <div><div class="shot"><img src="shots/option-1-mobile-hero.png" alt="Option 1 phone first screen"></div><div class="cap">휴대폰 · Phone</div></div>
+  </div>
+  <div class="notes">
+    <div><h3>분위기 · Look</h3>짙은 남색 배경 위에 흰 견적 양식이 가장 먼저 눈에 들어옵니다. 굵은 글씨와 노란 버튼으로 "지금 문의하세요"가 분명합니다.
+      <span class="en">A white quote form on deep navy is the first thing you see. Heavy type and a yellow button make the next step obvious.</span></div>
+    <div><h3>이런 경우에 추천 · Best if</h3>구글 광고로 들어온 손님이 바로 문의하게 만드는 것이 가장 중요할 때.
+      <span class="en">Getting ad visitors to enquire straight away matters most.</span></div>
+    <div><h3>글꼴·색 · Type &amp; colour</h3>Poppins
+      <div class="sw"><span style="background:#16255F"></span><span style="background:#4A63E7"></span><span style="background:#F6C21C"></span><span style="background:#F3F5FB"></span></div>
+      <a class="open" href="option-1/">전체 페이지 열기 · Open full page</a></div>
+  </div>
+  <div class="foot"><span>7 Star Clean Service — Website Design Book</span><span>3 / 6</span></div>
+</section>
+
+<!-- OPTION 2 -->
+<section class="page">
+  <div class="pagehead">
+    <span class="tag">Option 2</span>
+    <h2>2번 — 밝고 산뜻한 디자인 <span class="en" style="font-weight:600;font-size:15pt">· Light &amp; fresh</span></h2>
+  </div>
+  <div class="opt-grid">
+    <div><div class="shot"><img src="shots/option-2-desktop-hero.png" alt="Option 2 desktop first screen"></div><div class="cap">컴퓨터 첫 화면 · Desktop, first screen</div></div>
+    <div><div class="shot"><img src="shots/option-2-mobile-hero.png" alt="Option 2 phone first screen"></div><div class="cap">휴대폰 · Phone</div></div>
+  </div>
+  <div class="notes">
+    <div><h3>분위기 · Look</h3>흰색과 옅은 파랑 바탕에 비눗방울 모양의 둥근 사진. 가볍고 깨끗한 느낌이며, 맨 위 줄에 주소·영업시간·전화가 보입니다.
+      <span class="en">White and pale blue with round, soap-bubble photo shapes. Light and clean; address, hours and phone sit in the top bar.</span></div>
+    <div><h3>이런 경우에 추천 · Best if</h3>가정집 손님에게 친근하고 깨끗한 인상을 주고 싶을 때. 사진이 많을수록 살아납니다.
+      <span class="en">You want a friendly, clean impression for households. It improves with more photos.</span></div>
+    <div><h3>글꼴·색 · Type &amp; colour</h3>Poppins + Open Sans
+      <div class="sw"><span style="background:#FFFFFF"></span><span style="background:#EAEEFF"></span><span style="background:#4A63E7"></span><span style="background:#F6C21C"></span></div>
+      <a class="open" href="option-2/">전체 페이지 열기 · Open full page</a></div>
+  </div>
+  <div class="foot"><span>7 Star Clean Service — Website Design Book</span><span>4 / 6</span></div>
+</section>
+
+<!-- OPTION 3 -->
+<section class="page">
+  <div class="pagehead">
+    <span class="tag">Option 3</span>
+    <h2>3번 — 차분하고 고급스러운 디자인 <span class="en" style="font-weight:600;font-size:15pt">· Warm &amp; premium</span></h2>
+  </div>
+  <div class="opt-grid">
+    <div><div class="shot"><img src="shots/option-3-desktop-hero.png" alt="Option 3 desktop first screen"></div><div class="cap">컴퓨터 첫 화면 · Desktop, first screen</div></div>
+    <div><div class="shot"><img src="shots/option-3-mobile-hero.png" alt="Option 3 phone first screen"></div><div class="cap">휴대폰 · Phone</div></div>
+  </div>
+  <div class="notes">
+    <div><h3>분위기 · Look</h3>로고의 파랑을 한 가지 색으로 넓게 쓰고, 제목은 신문 같은 세리프 글꼴입니다. 여백이 넉넉해 차분하고 믿음직합니다.
+      <span class="en">The logo's blue as one flat colour, with serif headlines. Generous white space gives a calm, trustworthy feel.</span></div>
+    <div><h3>이런 경우에 추천 · Best if</h3>가격보다 신뢰와 품질로 고르는 손님, 그리고 사무실·상업 고객에게도 어울리게 하고 싶을 때.
+      <span class="en">You want to appeal to customers who choose on trust and quality, and to office and commercial clients as well.</span></div>
+    <div><h3>글꼴·색 · Type &amp; colour</h3>Merriweather + Figtree
+      <div class="sw"><span style="background:#3D52D9"></span><span style="background:#1C2463"></span><span style="background:#F6C21C"></span><span style="background:#FAF8F3"></span></div>
+      <a class="open" href="option-3/">전체 페이지 열기 · Open full page</a></div>
+  </div>
+  <div class="foot"><span>7 Star Clean Service — Website Design Book</span><span>5 / 6</span></div>
+</section>
+
+<!-- COMPARE + NEXT -->
+<section class="page">
+  <div class="pagehead">
+    <span class="tag">비교와 다음 단계 · Compare and next steps</span>
+    <h2>한눈에 비교</h2>
+  </div>
+  <table>
+    <thead><tr><th></th><th>1번 · Bold &amp; direct</th><th>2번 · Light &amp; fresh</th><th>3번 · Warm &amp; premium</th></tr></thead>
+    <tbody>
+      <tr><td>첫인상<span class="en">First impression</span></td><td>강하고 분명함<span class="en">Strong, clear</span></td><td>밝고 친근함<span class="en">Bright, friendly</span></td><td>차분하고 고급스러움<span class="en">Calm, premium</span></td></tr>
+      <tr><td>첫 화면 바탕<span class="en">Hero background</span></td><td>짙은 남색<span class="en">Deep navy</span></td><td>흰색·옅은 파랑<span class="en">White, pale blue</span></td><td>로고 파랑 단색<span class="en">Flat logo blue</span></td></tr>
+      <tr><td>제목 글꼴<span class="en">Headline type</span></td><td>굵은 고딕<span class="en">Heavy sans</span></td><td>둥근 고딕<span class="en">Rounded sans</span></td><td>세리프(명조 계열)<span class="en">Serif</span></td></tr>
+      <tr><td>사진 의존도<span class="en">Needs photos</span></td><td>낮음<span class="en">Low</span></td><td>높음<span class="en">High</span></td><td>중간<span class="en">Medium</span></td></tr>
+    </tbody>
+  </table>
+  <div class="cols" style="margin-top:6mm">
+    <div class="box">
+      <h3>사장님께 부탁드리는 자료 <span class="en">· What we need from you</span></h3>
+      <ul>
+        <li>마음에 드는 디자인 번호 (섞어도 됩니다)<span class="en">Your preferred option (mixing is fine)</span></li>
+        <li>작업 종류 6가지의 대략적인 가격대<span class="en">A rough price range for each of the six job types</span></li>
+        <li>사진: 팀, 차량, 작업 전·후<span class="en">Photos: team, vehicle, before and after</span></li>
+        <li>홈페이지에 싣고 싶은 구글 리뷰 3~4개<span class="en">Three or four Google reviews to feature</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>다음 단계 <span class="en">· Next steps</span></h3>
+      <ul>
+        <li>디자인이 정해지면 같은 디자인으로 서비스·지역 페이지를 포함한 전체 사이트를 제작합니다.
+          <span class="en">Once a design is chosen, the full site, including service and area pages, is built in that design.</span></li>
+        <li>출시 전에 완성된 사이트를 보시고 한 차례 수정을 요청하실 수 있습니다.
+          <span class="en">Before launch you review the finished site and may ask for one round of revisions.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Connect Your Way · Sean Yongwoo Cho, Founder · connectyourway.au</span><span>6 / 6</span></div>
+</section>
+
+</body>
+</html>
