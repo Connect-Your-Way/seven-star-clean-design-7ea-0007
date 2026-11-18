@@ -5,6 +5,7 @@
  *     only fetched on the first interaction with the form, so pages load no
  *     third-party script. If it cannot load, the form shows the phone number.
  *   - Escape closes the desktop dropdowns; the mobile menu closes after a tap.
+ *   - Before-and-after photos open larger in a light <dialog>.
  * Without JavaScript the menus and FAQs still work (CSS and <details>).
  */
 (function () {
@@ -180,4 +181,44 @@
       }
     });
   }
+
+  /* ---- Before-and-after photos: a light dialog for the large view ------ */
+  // Each photo links to its large file; without JavaScript (or <dialog>) the
+  // link just opens the image. Escape, the close button or a click outside
+  // closes it; focus returns to the photo.
+  var box = null;
+  var opener = null;
+  function lightbox() {
+    if (box) return box;
+    box = doc.createElement('dialog');
+    box.className = 'lightbox';
+    box.setAttribute('aria-label', 'Photo');
+    var close = doc.createElement('button');
+    close.type = 'button';
+    close.className = 'lb-close';
+    close.setAttribute('aria-label', 'Close');
+    close.textContent = '×';
+    var img = doc.createElement('img');
+    img.alt = '';
+    box.appendChild(close);
+    box.appendChild(img);
+    close.addEventListener('click', function () { box.close(); });
+    box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+    box.addEventListener('close', function () { if (opener) opener.focus(); });
+    doc.body.appendChild(box);
+    return box;
+  }
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-lightbox]');
+    if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (typeof HTMLDialogElement !== 'function') return;
+    e.preventDefault();
+    var d = lightbox();
+    var img = d.querySelector('img');
+    var thumb = a.querySelector('img');
+    img.src = a.href;
+    img.alt = thumb ? thumb.alt : '';
+    opener = a;
+    d.showModal();
+  });
 })();
