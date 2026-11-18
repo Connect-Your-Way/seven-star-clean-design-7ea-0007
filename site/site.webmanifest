@@ -1,0 +1,19 @@
+{
+  "name": "7 Star Clean Service",
+  "short_name": "7 Star Clean",
+  "icons": [
+    {
+      "src": "/seven-star-clean-design-7ea-0007/site/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/seven-star-clean-design-7ea-0007/site/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#3D52D9",
+  "background_color": "#ffffff",
+  "display": "browser"
+}

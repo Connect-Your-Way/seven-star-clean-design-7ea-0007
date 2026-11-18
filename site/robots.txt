@@ -1,0 +1,3 @@
+# Preview of the 7 Star Clean Service website. Not the live site.
+User-agent: *
+Disallow: /
